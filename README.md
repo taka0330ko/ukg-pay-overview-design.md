@@ -23,12 +23,14 @@ Compare appearance (layout, spacing, typography, and colors) and interactive beh
 
 ### Branch roles
 
-- `main`: An overview of the comparison goals, implementation conditions, and links to each version.
+- `main`: A minimal comparison website with all three implementations at `/v1/`, `/v2/`, and `/v3/`, plus downloadable design.md files and a shared Figma ZIP.
 - `v1` / `v2` / `v3`: Separate implementations preserved for individual deployment and comparison.
 
 Each implementation branch includes Vercel configuration. Live URLs will be added to the table after deployment is confirmed.
 
-The main branch contains only this README. Use the version branches for implementations and comparisons.
+Deploy main to Vercel with the repository settings. The root page links to each version on the same site. Source snapshots live in `versions/`; `npm run build` produces the complete site in `dist/`.
+
+v3 uses the same design.md as v2; its implementation differs through natural-language AI revisions. Original version branches remain preserved.
 
 ---
 
@@ -53,9 +55,11 @@ Figmaから画面を実装する際に、design.mdに記載する情報の詳し
 
 ### ブランチの役割
 
-- `main`：比較の目的・作成条件・各版へのリンクをまとめる案内。
+- `main`：`/v1/`・`/v2/`・`/v3/`の実装と、各design.md・共通Figma ZIPをまとめたシンプルな比較サイト。
 - `v1` / `v2` / `v3`：各バージョンの実装を保存し、個別に公開するためのブランチ。
 
 各実装ブランチにはVercel用の設定を含めています。公開URLはデプロイ確認後に上の表へ追記します。
 
-mainにはこのREADMEのみを置いています。実装の参照・比較には各バージョンのブランチを使用してください。
+mainをVercelへデプロイすると、トップページから同じサイト内の各版へ移動できます。ソースのスナップショットは`versions/`に保存し、`npm run build`でサイト全体を`dist/`へ生成します。
+
+v3のdesign.mdはv2と同一です。自然言語のAI修正による違いは実装に反映されています。元の各バージョンのブランチも保存しています。
