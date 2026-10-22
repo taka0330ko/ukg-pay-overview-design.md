@@ -34,6 +34,7 @@ export function SideMenuItem({
           : "sidebar-item-idle"
       }`}
       type="button"
+      aria-disabled="true"
     >
       {Icon ? (
         <img className="sidebar-icon" src={`/assets/${asset[label]}.svg`} alt="" width="24" height="24"/>

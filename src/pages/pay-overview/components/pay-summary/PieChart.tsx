@@ -1,3 +1,116 @@
-import {useEffect,useRef} from 'react';
-import Highcharts from 'highcharts';
-export default function PieChart({deductions,netPay}:{deductions:number;netPay:number}){const ref=useRef<HTMLDivElement>(null);useEffect(()=>{if(!ref.current)return;const c=Highcharts.chart(ref.current,{chart:{type:'pie',width:180,height:180,backgroundColor:'transparent',spacing:[0,0,0,0],animation:false},title:{text:undefined},credits:{enabled:false},tooltip:{enabled:false},accessibility:{enabled:false},plotOptions:{pie:{size:180,center:['50%','50%'],borderWidth:0,animation:false,enableMouseTracking:false,dataLabels:{enabled:false},startAngle:0}},series:[{type:'pie',data:[{y:netPay,color:'#009789'},{y:deductions,color:'#9ee7df'}]}]});return()=>c.destroy()},[deductions,netPay]);return <div className="pay-chart"><div className="deductions-label">Deductions<small>${deductions.toFixed(2)}</small></div><div ref={ref} className="pie-circle"/><div className="net-label">Net pay<small>${netPay.toFixed(2)}</small></div></div>}
+import { useEffect, useRef } from "react";
+import Highcharts from "highcharts";
+
+type PiePoint = Highcharts.Point & {
+  slice: (sliced?: boolean) => void;
+};
+
+type PieChartProps = {
+  deductions: number;
+  netPay: number;
+};
+
+function cssVar(name: string) {
+  return getComputedStyle(document.documentElement)
+    .getPropertyValue(name)
+    .trim();
+}
+
+export default function PieChart({ deductions, netPay }: PieChartProps) {
+  const chartRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!chartRef.current) {
+      return undefined;
+    }
+
+    const surface = cssVar("--color-neutral-0");
+    const textPrimary = cssVar("--color-text-primary");
+    const deductionsColor = cssVar("--color-teal-200");
+    const netPayColor = cssVar("--color-teal-600");
+
+    const chart = Highcharts.chart(chartRef.current, {
+      chart: {
+        type: "pie",
+        width: 300,
+        height: 240,
+        backgroundColor: "transparent",
+        spacing: [0, 0, 0, 0],
+      },
+      title: {
+        text: undefined,
+      },
+      credits: {
+        enabled: false,
+      },
+      tooltip: {
+        enabled: false,
+      },
+      plotOptions: {
+        pie: {
+          animation: {
+            duration: 180,
+          },
+          borderColor: surface,
+          borderWidth: 5,
+          center: ["50%", "55%"],
+          dataLabels: {
+            enabled: true,
+            distance: 28,
+            format: "{point.name}<br/>${point.y:.2f}",
+            style: {
+              color: textPrimary,
+              fontSize: "14px",
+              fontWeight: "400",
+              textOutline: "none",
+            },
+          },
+          point: {
+            events: {
+              mouseOut() {
+                (this as PiePoint).slice(false);
+              },
+              mouseOver() {
+                (this as PiePoint).slice(true);
+              },
+            },
+          },
+          slicedOffset: 8,
+          size: 180,
+          startAngle: 0,
+          states: {
+            hover: {
+              brightness: 0,
+              halo: {
+                size: 0,
+              },
+            },
+          },
+        },
+      },
+      series: [
+        {
+          type: "pie",
+          data: [
+            {
+              name: "Net pay",
+              y: netPay,
+              color: netPayColor,
+            },
+            {
+              name: "Deductions",
+              y: deductions,
+              color: deductionsColor,
+            },
+          ],
+        },
+      ],
+    });
+
+    return () => {
+      chart.destroy();
+    };
+  }, [deductions, netPay]);
+
+  return <div ref={chartRef} className="mx-auto max-w-80" />;
+}

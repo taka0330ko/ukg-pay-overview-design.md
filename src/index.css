@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./styles/shift-card.css";
 
 /* 1. Primitive tokens */
 :root {
@@ -21,7 +22,7 @@
   --color-lime-400: #e9ff33;
   --color-lime-500: #e5ff1f;
   --color-lime-600: #e2e800;
-  --color-lime-700: #bccc00;
+  --color-lime-700: #bcc000;
   --color-lime-800: #8d9100;
   --color-lime-900: #8d9100;
   --color-lime-950: #313300;
@@ -325,10 +326,7 @@
     background: var(--color-status-regular);
   }
 
-  .shift-card {
-    background: var(--shift-card-bg);
-    color: var(--color-text-primary);
-  }
+  
 
   .time-card-line {
     background: var(--time-card-line);
@@ -336,6 +334,184 @@
 }
 /* Figma Semantic and Component aliases; see IMPLEMENTATION.md. */
 :root{--color-neutral-50:#fff;--color-neutral-100:#f5f5f5;--color-neutral-300:#d9d9d9;--color-neutral-700:#434343;--color-neutral-900:#1a1a1a;--color-action-primary:var(--color-lime-600);--color-action-secondary:var(--color-teal-700);--color-icon-primary:var(--color-teal-900);--shift-card-bg:var(--color-neutral-100);--calendar-grid-height:360px;--calendar-day-width:86px;--calendar-shift-width:80px;--calendar-shift-inset-inline:3px;--chart-primary:var(--color-teal-600);--chart-secondary:#9ee7df;--avatar-bg:#d0edff}
-button{font-family:inherit}button:focus-visible{outline:2px solid #00786f;outline-offset:3px}.app-main{position:relative}.menu-bar{display:none}.pay-page{padding:16px 16px 8px 10px}.pay-header h1{font-size:36px;font-weight:400;line-height:47px;margin:0}.pay-header-row{margin-top:24px;display:flex;justify-content:space-between;align-items:center;gap:16px}.pay-date{display:flex;align-items:center;gap:21px;white-space:nowrap;font-size:24px}.pay-date button{height:48px;border-radius:8px;padding:0 16px;display:flex;align-items:center;gap:12px;font-size:20px;font-weight:500}.pay-date button img:first-child{width:28px;height:28px}.pay-date button img:last-child{width:12px;height:12px}.notification{display:flex;align-items:center;gap:16px;min-height:52px;padding:6px 16px;border:1px solid var(--color-border-primary);border-radius:4px;font-size:14px}.notification>img{width:36px;height:36px}.pay-panels{display:grid;grid-template-columns:minmax(310px,1fr) minmax(644px,1.96fr);gap:16px;margin-top:15px}.panel-card{border-radius:4px;padding:16px;min-height:670px}.section-title{font-size:24px;line-height:29px;font-weight:400}.pay-chart{height:355px;position:relative}.pie-circle{position:absolute;top:83.5px;left:50%;transform:translateX(-50%);width:180px;height:180px}.deductions-label{position:absolute;top:40px;left:30%;font-size:16px}.pay-chart small{display:block;font-size:14px;margin-top:4px}.net-label{position:absolute;top:243px;left:74%;font-size:16px;white-space:nowrap}.summary-card>.space-y-4{font-size:14px}.summary-card>.space-y-4>div{gap:8px}.summary-card>.space-y-4>div:last-child{font-size:16px}.summary-card>.mt-8{margin-top:16px}.summary-card .button-primary{height:48px;border-radius:4px;padding:0 16px;font-size:14px;font-weight:400;gap:12px}.summary-card .button-primary>span:first-child{width:24px;height:28px}.summary-card .button-primary img{width:24px;height:28px}.calendar-card .toggle{width:224px;height:36px;padding:2px}.toggle button{width:50%;padding:0;font-size:14px}.toggle-thumb{top:2px;bottom:2px;left:2px;width:calc(50% - 2px)!important;transition:transform 250ms ease}.toggle-tab-idle:hover{background:transparent}.calendar-body{display:flex;margin:20px 0 0;min-width:0}.time-axis{width:40px;flex-shrink:0;padding-top:0}.axis-labels{height:360px;position:relative}.axis-labels span{position:absolute;right:10px;transform:translateY(-50%);font-size:10px;color:#434343}.calendar-scroll{overflow-x:auto;overflow-y:hidden;flex:1;min-width:0;padding-bottom:8px}.week-grid{width:602px;display:grid;grid-template-columns:repeat(7,86px)}.day-time{height:360px;position:relative;border-left:2px solid #f5f5f5;background:repeating-linear-gradient(to bottom,#d9d9d9 0,#d9d9d9 2px,transparent 2px,transparent 90px);border-bottom:2px solid #d9d9d9}.day-column:last-child .day-time{border-right:2px solid #f5f5f5}.day-label{display:flex;align-items:center;gap:6px;height:52px;padding-top:10px;position:relative}.day-label:before{content:'';height:19px;border-left:2px solid #d9d9d9;margin-right:0}.day-label b{font-family:Inter,sans-serif;font-size:24px;font-weight:500}.day-label>div{width:39px;text-align:center}.day-label span{font-size:12px;display:block}.day-label small{font-size:8px;display:block;margin-top:4px}.work-cell{position:absolute;left:1px;width:80px;border-radius:4px;overflow:hidden;cursor:default}.shift-label{position:absolute;bottom:3px;left:8px;display:flex;gap:2px;align-items:center;font:10px Inter,sans-serif;white-space:nowrap}.shift-label i{width:4px;height:12px;border-radius:3px}.late-band{position:absolute;inset:0 0 auto;height:7px;background:var(--color-status-late)}.overtime-band{position:absolute;left:0;right:0;background:var(--color-status-overtime)}.shift-overlay{position:fixed;z-index:200;width:188px;pointer-events:none}.shift-card{width:188px;min-height:177px;border-radius:4px;padding:8px;font-family:Inter,sans-serif;display:flex;flex-direction:column;gap:16px}.timeline-event{display:flex;align-items:center;gap:8px}.timeline-event>i{width:9px;height:9px;border-radius:50%}.timeline-event strong{font-size:16px;font-weight:400}.timeline-event>span{margin-left:auto;display:flex;gap:4px;align-items:center;color:#767676;font-size:10px}.timeline-event img{width:12px;height:12px}.timeline-break{display:flex;gap:8px;font-size:12px}.timeline-break>i{width:8px;border-radius:8px}.timeline-break>div{flex:1}.timeline-break p{display:flex;justify-content:space-between;line-height:18px}.timeline-break span{color:#767676;font-size:10px}.shift-card footer{border-top:1px solid #d9d9d9;padding-top:4px;margin-top:auto}.shift-card footer p{display:flex;justify-content:space-between;color:#767676;font-size:10px;margin-bottom:4px}.shift-card footer span{font-size:12px;color:#1a1a1a}.shift-modal{position:fixed;inset:0;background:#0006;z-index:200;display:grid;place-items:center}.shift-modal>div{position:relative}.modal-close{position:absolute;right:0;top:-36px;color:white;font-size:28px}.calendar-card>.text-primary{margin-top:16px;padding:0 16px;max-width:none}.calendar-card .space-y-3>:not(:last-child){margin-bottom:8px}.calendar-card .h-6{height:18px}.calendar-card .font-bold>span:last-child{font-size:20px}.calendar-card .text-secondary{font-size:14px}.sidebar-panel{width:215px}.sidebar-panel>div:first-child{height:180px;padding-bottom:0}.sidebar-close-button{margin:20px 0 0 24px;padding:4px;color:#005151}.sidebar-panel>div>div.mt-3{margin-top:8px;padding:0 24px;gap:16px}.sidebar-avatar{width:70px;height:70px;border-radius:20px;background:var(--avatar-bg)}.sidebar-user-name{font-size:24px}.sidebar-panel nav{padding-top:30px;padding-left:16px;padding-right:16px}.sidebar-section-title{font-size:14px;margin-bottom:24px}.sidebar-item{font-size:14px;font-weight:400;min-height:32px;padding:0;gap:8px;border-radius:4px;cursor:default}.sidebar-item svg{width:24px;height:24px}.sidebar-item svg:last-child:not(:first-child){width:16px;height:16px;margin-left:0}.sidebar-item:has(.flex-1){min-height:32px}.sidebar-item-active{font-weight:700}.sidebar-panel nav .space-y-3.pt-1{padding-top:24px}.sidebar-panel nav .space-y-3.pt-1 .sidebar-item{height:34px;padding-left:24px}.sidebar-panel nav .space-y-3.pt-1>:not(:last-child){margin-bottom:16px}.sidebar-panel nav>.mt-8{margin-top:24px}.sidebar-panel nav .rule-primary{margin:16px 0}.sidebar-item-idle:hover,.sidebar-close-button:hover{background:transparent}.button-primary:hover{background:var(--button-primary-bg)}.button-secondary:hover{background:var(--button-secondary-bg)}.sidebar-panel nav::-webkit-scrollbar{width:8px}.sidebar-panel nav::-webkit-scrollbar-thumb{background:#c4c4c4;border-radius:8px}.menu-bar{position:absolute;top:16px;left:-52px}.menu-bar:has(button){display:block}.menu-bar button{position:relative!important}.app-main:has(.pay-page){min-width:0}@media(min-width:768px){body:has(.sidebar-panel.translate-x-0) .menu-bar{display:none}}@media(max-width:1199px){.pay-panels{grid-template-columns:1fr;gap:32px;margin-top:32px}.pay-page{padding:16px}.pay-header-row{align-items:flex-start;flex-direction:column-reverse;margin-top:32px}.notification{width:100%;max-width:420px}.panel-card{min-height:680px}.calendar-card{min-height:687px}.pay-chart{height:363px}.calendar-body{margin-top:20px}.pay-header-row{gap:16px}}@media(max-width:767px){.menu-bar{display:block;position:static;height:40px;margin:12px 11px 0}.pay-page{padding:29px 11px 48px}.pay-header-row{margin-top:32px}.pay-header h1{font-size:36px}.pay-date{gap:21px}.pay-panels{margin-top:32px}.calendar-card{padding:10px}.calendar-card>.text-primary{padding:0}.calendar-card .text-secondary{white-space:normal;font-size:12px}.calendar-card .grid-cols-\[1fr_auto\]{gap:8px}.summary-card{padding:16px}.sidebar-panel{z-index:100}.sidebar-panel>div:first-child{height:180px}.notification{font-size:12px}.pay-date button{font-size:20px}.pay-date{font-size:24px}.calendar-card>.text-primary{font-size:14px}.calendar-card .font-bold>span:last-child{font-size:18px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+button{font-family:inherit}button:focus-visible{outline:2px solid #00786f;outline-offset:3px}.app-main{position:relative}.menu-bar{display:none}.pay-page{padding:16px 16px 8px 10px}.pay-header h1{font-size:36px;font-weight:400;line-height:47px;margin:0}.pay-header-row{margin-top:24px;display:flex;justify-content:space-between;align-items:center;gap:16px}.pay-date{display:flex;align-items:center;gap:21px;white-space:nowrap;font-size:24px}.pay-date button{height:48px;border-radius:8px;padding:0 16px;display:flex;align-items:center;gap:12px;font-size:20px;font-weight:500}.pay-date button img:first-child{width:28px;height:28px}.pay-date button img:last-child{width:12px;height:12px}.notification{display:flex;align-items:center;gap:16px;min-height:52px;padding:6px 16px;border:1px solid var(--color-border-primary);border-radius:4px;font-size:14px}.notification-info{display:flex;align-items:center;justify-content:center;width:36px;height:36px;flex-shrink:0;border-radius:50%;background:var(--color-teal-100)}.notification-info img{width:16px;height:16px}.pay-panels{display:grid;grid-template-columns:minmax(310px,1fr) minmax(644px,1.96fr);gap:16px;margin-top:15px}.panel-card{border-radius:4px;padding:16px;min-height:670px}.section-title{font-size:24px;line-height:29px;font-weight:400}.pay-chart{height:355px;position:relative}.pie-circle{position:absolute;top:83.5px;left:50%;transform:translateX(-50%);width:180px;height:180px}.deductions-label{position:absolute;top:40px;left:30%;font-size:16px}.pay-chart small{display:block;font-size:14px;margin-top:4px}.net-label{position:absolute;top:243px;left:74%;font-size:16px;white-space:nowrap}.summary-card>.space-y-4{font-size:14px}.summary-card>.space-y-4>div{gap:8px}.summary-card>.space-y-4>div:last-child{font-size:16px}.summary-card>.mt-8{margin-top:16px}.summary-card .button-primary{height:48px;border-radius:4px;padding:0 16px;font-size:14px;font-weight:400;gap:12px}.summary-card .button-primary>span:first-child{width:24px;height:28px}.summary-card .button-primary img{width:24px;height:28px}.calendar-card .toggle{width:224px;height:36px;padding:2px}.toggle button{width:50%;padding:0;font-size:14px}.toggle-thumb{top:2px;bottom:2px;left:2px;width:calc(50% - 2px)!important;transition:transform 650ms ease}.calendar-body{display:flex;margin:20px 0 0;min-width:0}.time-axis{width:40px;flex-shrink:0;padding-top:0}.axis-labels{height:360px;position:relative}.axis-labels span{position:absolute;right:10px;transform:translateY(-50%);font-size:10px;color:#434343}.calendar-scroll{overflow-x:auto;overflow-y:hidden;flex:1;min-width:0;padding-bottom:8px}.week-grid{width:602px;display:grid;grid-template-columns:repeat(7,86px)}.day-time{height:360px;position:relative;border-left:2px solid #f5f5f5;background:repeating-linear-gradient(to bottom,#d9d9d9 0,#d9d9d9 2px,transparent 2px,transparent 90px);border-bottom:2px solid #d9d9d9}.day-column:last-child .day-time{border-right:2px solid #f5f5f5}.day-label{display:flex;align-items:center;gap:6px;height:52px;padding-top:10px;position:relative}.day-label:before{content:'';height:19px;border-left:2px solid #d9d9d9;margin-right:0}.day-label b{font-family:Inter,sans-serif;font-size:24px;font-weight:500}.day-label>div{width:39px;text-align:center}.day-label span{font-size:12px;display:block}.day-label small{font-size:8px;display:block;margin-top:4px}.work-cell{position:absolute;left:1px;width:80px;border-radius:4px;overflow:hidden;cursor:default}.shift-label{position:absolute;bottom:3px;left:8px;display:flex;gap:2px;align-items:center;font:10px Inter,sans-serif;white-space:nowrap}.shift-label i{width:4px;height:12px;border-radius:3px}.late-band{position:absolute;inset:0 0 auto;height:7px;background:var(--color-status-late)}.overtime-band{position:absolute;left:0;right:0;background:var(--color-status-overtime)}.shift-overlay{position:fixed;z-index:200;width:188px;pointer-events:none}.calendar-card>.text-primary{margin-top:16px;padding:0 16px;max-width:none}.calendar-card .space-y-3>:not(:last-child){margin-bottom:8px}.calendar-card .h-6{height:18px}.calendar-card .font-bold>span:last-child{font-size:20px}.calendar-card .text-secondary{font-size:14px}.sidebar-panel{width:215px}.sidebar-panel>div:first-child{height:180px;padding-bottom:0}.sidebar-close-button{margin:20px 0 0 24px;padding:4px;color:#005151}.sidebar-panel>div>div.mt-3{margin-top:8px;padding:0 24px;gap:16px}.sidebar-avatar{width:70px;height:70px;border-radius:20px;background:var(--avatar-bg)}.sidebar-user-name{font-size:24px}.sidebar-panel nav{padding-top:30px;padding-left:16px;padding-right:16px}.sidebar-section-title{font-size:14px;margin-bottom:24px}.sidebar-item{font-size:14px;font-weight:400;min-height:32px;padding:0;gap:8px;border-radius:4px;cursor:default}.sidebar-item svg{width:24px;height:24px}.sidebar-item svg:last-child:not(:first-child){width:16px;height:16px;margin-left:0}.sidebar-item:has(.flex-1){min-height:32px}.sidebar-item-active{font-weight:700}.sidebar-panel nav .space-y-3.pt-1{padding-top:24px}.sidebar-panel nav .space-y-3.pt-1 .sidebar-item{height:34px;padding-left:24px}.sidebar-panel nav .space-y-3.pt-1>:not(:last-child){margin-bottom:16px}.sidebar-panel nav>.mt-8{margin-top:24px}.sidebar-panel nav .rule-primary{margin:16px 0}.sidebar-panel nav::-webkit-scrollbar{width:8px}.sidebar-panel nav::-webkit-scrollbar-thumb{background:#c4c4c4;border-radius:8px}.menu-bar{position:absolute;top:16px;left:-52px}.menu-bar:has(button){display:block}.menu-bar button{position:relative!important}.app-main:has(.pay-page){min-width:0}@media(min-width:768px){body:has(.sidebar-panel.translate-x-0) .menu-bar{display:none}}@media(max-width:1199px){.pay-panels{grid-template-columns:1fr;gap:32px;margin-top:32px}.pay-page{padding:16px}.pay-header-row{align-items:flex-start;flex-direction:column-reverse;margin-top:32px}.notification{width:100%;max-width:420px}.panel-card{min-height:680px}.calendar-card{min-height:687px}.pay-chart{height:363px}.calendar-body{margin-top:20px}.pay-header-row{gap:16px}}@media(max-width:767px){.menu-bar{display:block;position:static;height:40px;margin:12px 11px 0}.pay-page{padding:29px 11px 48px}.pay-header-row{margin-top:32px}.pay-header h1{font-size:36px}.pay-date{gap:21px}.pay-panels{margin-top:32px}.calendar-card{padding:10px}.calendar-card>.text-primary{padding:0}.calendar-card .text-secondary{white-space:normal;font-size:12px}.calendar-card .grid-cols-\[1fr_auto\]{gap:8px}.summary-card{padding:16px}.sidebar-panel{z-index:100}.sidebar-panel>div:first-child{height:180px}.notification{font-size:12px}.pay-date button{font-size:20px}.pay-date{font-size:24px}.calendar-card>.text-primary{font-size:14px}.calendar-card .font-bold>span:last-child{font-size:18px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
 .sidebar-item>img:first-child{flex-shrink:0}.sidebar-item>img:last-child:not(:first-child){margin-left:auto}.sidebar-close-button img{display:block}.menu-bar button{margin-top:0}.calendar-card .week-marker-active{width:8px}.summary-card .button-primary{white-space:nowrap}.calendar-card .text-secondary{overflow:visible;text-overflow:clip}
+
+/* Reference repository hover behavior, preserving the current chart and grid layout. */
+
+@media (hover:hover) and (pointer:fine){
+  .work-cell{cursor:none;transition:transform 150ms}
+  .work-cell:hover{transform:scale(1.02);z-index:50}
+  .work-cell .work-cell-cursor{position:absolute;z-index:10;pointer-events:none;width:16px;height:16px;border-radius:50%;opacity:.8;transform:translate(-50%,-50%) scale(0);transition:opacity 75ms,transform 75ms}
+  .work-cell:hover .work-cell-cursor{transform:translate(-50%,-50%) scale(1)}
+}
+@media (hover:none),(pointer:coarse){.work-cell-cursor{display:none}}
+@media(prefers-reduced-motion:reduce){.work-cell,.work-cell .work-cell-cursor{transition:none}}
+
+/* Keep the page spacing; the chart itself uses the upstream 300 × 240 layout. */
+.repository-chart{display:flex;align-items:flex-start;justify-content:center;padding-top:43.1px}
+
+/* Figma ShiftCell: status stripes stay inside the actual-time outline. */
+:root{--work-cell-status-band-height:8px}
+.work-cell-body{position:absolute;inset:0;border-radius:4px;background:var(--work-cell-bg)}
+.work-cell-overtime{background:var(--color-status-overtime)}
+.work-cell-early-leave{background:var(--color-early-leave)}
+.work-cell-overtime .work-cell-body,.work-cell-early-leave .work-cell-body{bottom:var(--work-cell-status-band-height)}
+.work-cell-late{background:var(--color-status-late)}
+.work-cell-late .work-cell-body{top:7px}
+.work-cell .shift-label{left:50%;transform:translateX(-50%);bottom:3px;line-height:12px}
+.work-cell .shift-label span{width:61px}
+.work-cell .shift-label i{flex-shrink:0}
+.work-cell-overtime .shift-label{bottom:14px}
+.work-cell-early-leave .shift-label{bottom:12px}
+
+/* Figma hover variants for navigation, actions and the inactive week. */
+:root{
+  /* Primitive values from Figma; consumers use Semantic or Component aliases. */
+  --color-gray-200:#e6e6e6;
+  --color-gray-300:#d6d6d6;
+  --numbers-4:4px;
+  --numbers-8:8px;
+  --numbers-16:16px;
+  --numbers-20:20px;
+  --numbers-24:24px;
+  --numbers-40:40px;
+  /* Semantic: spacing/2xs, spacing/xs, spacing/m, spacing/l. */
+  --spacing-2xs:var(--numbers-4);
+  --spacing-xs:var(--numbers-8);
+  --spacing-m:var(--numbers-16);
+  --spacing-l:var(--numbers-24);
+  --color-surface-tertiary:var(--color-gray-300);
+  --color-surface-navigation-hover:var(--color-gray-200);
+  --color-action-primary-hover:var(--color-lime-700);
+  --color-action-secondary-hover:var(--color-teal-600);
+  /* Component aliases. */
+  --sidebar-hover:var(--color-surface-navigation-hover);
+  --sidebar-control-hover:var(--color-surface-tertiary);
+  --button-primary-hover:var(--color-action-primary-hover);
+  --button-secondary-hover:var(--color-action-secondary-hover);
+  --sidebar-item-padding-inline:var(--spacing-xs);
+  --sidebar-child-padding-inline:var(--spacing-l);
+  --sidebar-nav-padding-inline:var(--spacing-m);
+  --sidebar-control-size:var(--numbers-40);
+  --sidebar-control-radius:var(--numbers-20);
+}
+.sidebar-close-button{display:flex;align-items:center;justify-content:center;width:var(--sidebar-control-size);height:var(--sidebar-control-size);padding:var(--spacing-xs);border-radius:var(--sidebar-control-radius);margin-top:var(--spacing-m);margin-left:var(--sidebar-control-radius)}
+.sidebar-panel>div>div.mt-3{margin-top:var(--spacing-2xs)}
+.menu-bar button{width:var(--sidebar-control-size);height:var(--sidebar-control-size);padding:var(--spacing-xs);border-radius:var(--sidebar-control-radius);color:var(--color-icon-secondary)}
+@media(hover:hover) and (pointer:fine){
+  .sidebar-close-button:hover,.menu-bar button:hover{background:var(--sidebar-control-hover)}
+  .sidebar-item-idle:hover{background:var(--sidebar-hover)}
+  .sidebar-item-active:hover{background:var(--sidebar-selected)}
+  .button-primary:hover{background:var(--button-primary-hover)}
+  .button-secondary:hover{background:var(--button-secondary-hover)}
+  .toggle-tab-idle:hover{background:var(--toggle-hover)}
+}
+
+.sidebar-panel nav{padding-inline:var(--sidebar-nav-padding-inline)}
+.sidebar-item{padding-inline:var(--sidebar-item-padding-inline)}
+.sidebar-panel nav .space-y-3.pt-1 .sidebar-item{padding-inline:var(--sidebar-child-padding-inline)}
+
+/* Center the complete calendar (fixed time axis + seven date columns). */
+:root{
+  --calendar-axis-width:var(--numbers-40);
+  --calendar-week-width:calc(var(--calendar-day-width) * 7);
+  --calendar-body-width:calc(var(--calendar-axis-width) + var(--calendar-week-width));
+}
+.calendar-body{width:100%;max-width:var(--calendar-body-width);margin-inline:auto}
+.time-axis{width:var(--calendar-axis-width)}
+.week-grid{width:var(--calendar-week-width);grid-template-columns:repeat(7,var(--calendar-day-width))}
+
+
+/* Desktop density uses Component spacing aliases, keeping calendar/time and type sizes. */
+@media(min-width:1200px){
+  :root{
+    --numbers-300:300px;
+    --numbers-355:355px;
+    --numbers-43:43px;
+    --numbers-47:47px;
+    --numbers-52:52px;
+    --spacing-s:var(--numbers-12);
+    --pay-page-padding-top:var(--spacing-m);
+    --pay-page-padding-bottom:var(--spacing-xs);
+    --pay-header-row-gap:var(--spacing-l);
+    --pay-title-line-height:var(--numbers-47);
+    --pay-panels-margin-top:var(--spacing-m);
+    --pay-panel-padding:var(--spacing-m);
+    --pay-panel-min-height:670px;
+    --pay-chart-height:var(--numbers-355);
+    --pay-chart-padding-top:var(--numbers-43);
+    --calendar-switch-margin-top:var(--spacing-xs);
+    --calendar-grid-margin-top:var(--numbers-20);
+    --calendar-date-row-height:var(--numbers-52);
+    --calendar-scroll-padding-bottom:var(--spacing-xs);
+    --calendar-summary-margin-top:var(--spacing-m);
+    --calendar-summary-row-gap:var(--spacing-xs);
+    --calendar-total-margin-top:var(--spacing-xs);
+    --calendar-total-padding-top:var(--numbers-20);
+  }
+  .pay-page{padding-top:var(--pay-page-padding-top);padding-bottom:var(--pay-page-padding-bottom)}
+  .pay-header h1{line-height:var(--pay-title-line-height)}
+  .pay-header-row{margin-top:var(--pay-header-row-gap)}
+  .pay-panels{margin-top:var(--pay-panels-margin-top)}
+  .pay-panels>.panel-card{padding:var(--pay-panel-padding);min-height:var(--pay-panel-min-height)}
+  .summary-card .pay-chart{height:var(--pay-chart-height);padding-top:var(--pay-chart-padding-top)}
+  .calendar-card>.flex.justify-center{margin-top:var(--calendar-switch-margin-top)}
+  .calendar-card .calendar-body{margin-top:var(--calendar-grid-margin-top)}
+  .calendar-card .day-label{height:var(--calendar-date-row-height)}
+  .calendar-card .calendar-scroll{padding-bottom:var(--calendar-scroll-padding-bottom)}
+  .calendar-card>.text-primary{margin-top:var(--calendar-summary-margin-top)}
+  .calendar-card .space-y-3>:not(:last-child){margin-bottom:var(--calendar-summary-row-gap)}
+  .calendar-card .divider-primary{margin-top:var(--calendar-total-margin-top);padding-top:var(--calendar-total-padding-top)}
+}
+@media(min-width:1200px) and (max-height:850px){
+  :root{
+    --pay-page-padding-top:var(--spacing-xs);
+    --pay-header-row-gap:var(--spacing-xs);
+    --pay-panels-margin-top:var(--spacing-xs);
+    --pay-panel-min-height:0px;
+    --pay-chart-height:var(--numbers-300);
+    --pay-chart-padding-top:var(--spacing-l);
+    --calendar-switch-margin-top:var(--spacing-2xs);
+    --calendar-grid-margin-top:var(--spacing-xs);
+    --calendar-date-row-height:var(--numbers-40);
+    --calendar-scroll-padding-bottom:var(--spacing-2xs);
+    --calendar-summary-margin-top:var(--spacing-xs);
+    --calendar-total-padding-top:var(--spacing-s);
+  }
+}
+@media(min-width:1200px) and (max-height:760px){
+  :root{
+    --pay-page-padding-top:var(--spacing-2xs);
+    --pay-title-line-height:var(--numbers-43);
+    --pay-panel-padding:var(--spacing-s);
+    --calendar-summary-row-gap:var(--spacing-2xs);
+    --calendar-summary-margin-top:var(--spacing-2xs);
+    --calendar-total-margin-top:var(--spacing-2xs);
+    --calendar-total-padding-top:var(--spacing-2xs);
+    --calendar-grid-margin-top:var(--spacing-2xs);
+  }
+}
+
+/* Rebalance spare desktop height toward the header and calendar controls. */
+@media(min-width:1200px) and (min-height:769px) and (max-height:850px){
+  :root{
+    --desktop-spare-height:calc(100dvh - 768px);
+    --pay-page-padding-top:clamp(var(--spacing-xs),calc(var(--desktop-spare-height) / 4),var(--spacing-m));
+    --pay-header-row-gap:clamp(var(--spacing-xs),calc(var(--desktop-spare-height) / 4),var(--spacing-m));
+    --pay-panels-margin-top:clamp(var(--spacing-xs),calc(var(--desktop-spare-height) / 4),var(--spacing-m));
+    --calendar-switch-margin-top:clamp(var(--spacing-2xs),calc(var(--desktop-spare-height) / 8),var(--spacing-xs));
+    --calendar-grid-margin-top:clamp(var(--spacing-xs),calc(var(--desktop-spare-height) / 4),var(--spacing-m));
+  }
+}
+@media(min-width:1200px) and (max-height:760px){
+  :root{
+    --numbers-280:280px;
+    --pay-chart-height:var(--numbers-280);
+    --pay-page-padding-bottom:var(--spacing-2xs);
+  }
+}
+
+/* Unimplemented actions retain their hover styling and show an unavailable cursor. */
+button[aria-disabled="true"],button[aria-disabled="true"] *{cursor:not-allowed}

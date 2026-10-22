@@ -1,0 +1,174 @@
+/* Figma 3:2964 / ShiftTimelineCardOptionB. Base geometry: 188 × 177. */
+:root {
+  /* Primitive Numbers absent from the existing palette. */
+  --numbers-1: 1px;
+  --numbers-2: 2px;
+  --numbers-5: 5px;
+  --numbers-6: 6px;
+  --numbers-9: 9px;
+  --numbers-10: 10px;
+  --numbers-12: 12px;
+  --numbers-15: 15px;
+  --numbers-19: 19px;
+  --numbers-32: 32px;
+  --numbers-35: 35px;
+  --numbers-65: 65px;
+  --numbers-123: 123px;
+  --numbers-167: 167px;
+  --numbers-177: 177px;
+  --numbers-188: 188px;
+  --color-gray-500: #767676;
+
+  /* Semantic: exact Figma spacing and typography definitions. */
+  --spacing-none: 0px;
+  --spacing-3xs: var(--numbers-2);
+  --font-size-body-lg: var(--numbers-16);
+  --font-size-body-sm: var(--numbers-12);
+  --font-size-label-sm: var(--numbers-10);
+  --font-size-label-xsm: var(--numbers-8);
+  --font-timeline: "Inter", sans-serif;
+  --color-text-subtle: var(--color-gray-500);
+  --radius-s: var(--spacing-2xs);
+
+  /* Component: fixed Figma geometry plus mapped Semantic tokens. */
+  --shift-card-scale: 1;
+  --shift-card-width: var(--numbers-188);
+  --shift-card-height: var(--numbers-177);
+  --shift-card-padding: var(--spacing-xs);
+  --shift-card-timeline-height: var(--numbers-123);
+  --shift-card-row-width: var(--numbers-167);
+  --shift-card-row-gap: var(--spacing-m);
+  --shift-card-inline-gap: var(--spacing-xs);
+  --shift-card-clock-font: var(--font-size-body-lg);
+  --shift-card-clock-line: var(--numbers-19);
+  --shift-card-value-font: var(--font-size-body-sm);
+  --shift-card-value-line: var(--numbers-15);
+  --shift-card-label-font: var(--font-size-label-sm);
+  --shift-card-label-line: var(--numbers-12);
+  --shift-card-status-font: var(--font-size-label-xsm);
+  --shift-card-marker-size: var(--numbers-9);
+  --shift-card-break-width: var(--spacing-xs);
+  --shift-card-break-height: var(--numbers-35);
+  --shift-card-break-gap: var(--spacing-2xs);
+  --shift-card-action-width: var(--numbers-65);
+  --shift-card-action-gap: var(--spacing-2xs);
+  --shift-card-icon-size: var(--numbers-12);
+  --shift-card-summary-padding: var(--spacing-3xs);
+  --shift-card-summary-gap: var(--numbers-6);
+  --shift-card-border: var(--color-gray-300);
+  --shift-card-radius: var(--radius-s);
+  --shift-card-status-late: var(--color-status-late);
+  --shift-card-status-early-leave: var(--color-early-leave);
+  --shift-card-status-overtime: var(--color-status-overtime);
+  --shift-modal-scale: 1.5;
+  --shift-modal-viewport-inset: var(--spacing-m);
+  --shift-modal-close-size: var(--numbers-40);
+  --shift-modal-close-offset: var(--spacing-m);
+}
+
+.shift-card {
+  box-sizing: border-box;
+  width: calc(var(--shift-card-width) * var(--shift-card-scale));
+  min-height: calc(var(--shift-card-height) * var(--shift-card-scale));
+  padding: calc(var(--shift-card-padding) * var(--shift-card-scale));
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-none);
+  background: var(--shift-card-bg);
+  border-radius: calc(var(--shift-card-radius) * var(--shift-card-scale));
+  color: var(--color-neutral-950);
+  font-family: var(--font-timeline);
+  font-weight: 400;
+}
+.timeline-entries {
+  position: relative;
+  min-height: calc(var(--shift-card-timeline-height) * var(--shift-card-scale));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--shift-card-row-gap) * var(--shift-card-scale));
+}
+.timeline-event, .timeline-break {
+  display: flex;
+  align-items: center;
+  width: calc(var(--shift-card-row-width) * var(--shift-card-scale));
+  max-width: 100%;
+  gap: calc(var(--shift-card-inline-gap) * var(--shift-card-scale));
+}
+.timeline-event>i {
+  flex-shrink: 0;
+  width: calc(var(--shift-card-marker-size) * var(--shift-card-scale));
+  height: calc(var(--shift-card-marker-size) * var(--shift-card-scale));
+  border-radius: 50%;
+}
+.timeline-time {position: relative; flex-shrink: 0}
+.timeline-time strong {
+  display: block;
+  font-size: calc(var(--shift-card-clock-font) * var(--shift-card-scale));
+  line-height: calc(var(--shift-card-clock-line) * var(--shift-card-scale));
+  font-weight: 400;
+}
+.timeline-event>span {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: calc(var(--shift-card-action-width) * var(--shift-card-scale));
+  gap: calc(var(--shift-card-action-gap) * var(--shift-card-scale));
+  color: var(--color-text-subtle);
+  font-size: calc(var(--shift-card-label-font) * var(--shift-card-scale));
+  line-height: calc(var(--shift-card-label-line) * var(--shift-card-scale));
+  white-space: nowrap;
+}
+.timeline-event img {
+  flex-shrink: 0;
+  width: calc(var(--shift-card-icon-size) * var(--shift-card-scale));
+  height: calc(var(--shift-card-icon-size) * var(--shift-card-scale));
+}
+.timeline-break>i {
+  width: calc(var(--shift-card-break-width) * var(--shift-card-scale));
+  height: calc(var(--shift-card-break-height) * var(--shift-card-scale));
+  flex-shrink: 0;
+  border-radius: calc(var(--numbers-40) * var(--shift-card-scale));
+}
+.timeline-break>div {flex: 1; min-width: 0; display: flex; flex-direction: column; gap: calc(var(--shift-card-break-gap) * var(--shift-card-scale))}
+.timeline-break p, .timeline-summary p {display: flex; align-items: center; justify-content: space-between; margin: var(--spacing-none)}
+.timeline-break p {font-size: calc(var(--shift-card-value-font) * var(--shift-card-scale)); line-height: calc(var(--shift-card-value-line) * var(--shift-card-scale))}
+.timeline-break span {color: var(--color-text-subtle); font-size: calc(var(--shift-card-label-font) * var(--shift-card-scale)); line-height: calc(var(--shift-card-label-line) * var(--shift-card-scale)); white-space: nowrap}
+.timeline-summary {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--shift-card-summary-gap) * var(--shift-card-scale));
+  padding-top: calc(var(--shift-card-summary-padding) * var(--shift-card-scale));
+  margin: var(--spacing-none);
+}
+.timeline-summary::before {content: ""; position: absolute; top: calc(-1 * var(--numbers-1) * var(--shift-card-scale)); left: 0; right: 0; height: calc(var(--numbers-1) * var(--shift-card-scale)); background: var(--shift-card-border)}
+.timeline-summary p {color: var(--color-text-subtle); font-size: calc(var(--shift-card-label-font) * var(--shift-card-scale)); line-height: calc(var(--shift-card-value-line) * var(--shift-card-scale))}
+.timeline-summary span {color: var(--color-neutral-950); font-size: calc(var(--shift-card-value-font) * var(--shift-card-scale)); line-height: calc(var(--shift-card-value-line) * var(--shift-card-scale)); white-space: nowrap}
+.timeline-status {position: absolute; bottom: 100%; left: 0; white-space: nowrap; font-family: var(--font-primary); font-size: calc(var(--shift-card-status-font) * var(--shift-card-scale)); line-height: calc(var(--numbers-10) * var(--shift-card-scale)); font-weight: 400}
+.timeline-status-late {color: var(--shift-card-status-late); bottom: auto; top: calc(-1 * var(--numbers-9) * var(--shift-card-scale))}
+.timeline-status-early-leave {color: var(--shift-card-status-early-leave)}
+.timeline-status-overtime {color: var(--shift-card-status-overtime); font-size: calc(var(--font-size-label-sm) * var(--shift-card-scale)); line-height: calc(var(--numbers-12) * var(--shift-card-scale)); bottom: auto; top: calc(-1 * var(--numbers-10) * var(--shift-card-scale))}
+.timeline-status-secondary {left: 100%; margin-left: var(--spacing-xs)}
+
+.shift-modal {position: fixed; inset: 0; background: #0006; z-index: 200; display: grid; place-items: center; padding: var(--shift-modal-viewport-inset)}
+.shift-modal>div {position: relative; width: calc(var(--shift-card-width) * var(--shift-modal-scale)); max-width: 100%; padding-top: var(--shift-modal-close-size)}
+.shift-modal .shift-card {--shift-card-scale: var(--shift-modal-scale); width: 100%; max-height: calc(100dvh - var(--shift-modal-viewport-inset) * 2 - var(--shift-modal-close-size)); overflow-y: auto}
+.modal-close {position: absolute; top: 0; right: calc(-1 * var(--shift-modal-close-offset)); width: var(--shift-modal-close-size); height: var(--shift-modal-close-size); font-size: var(--numbers-32); line-height: 1; color: var(--color-text-inverse); display: flex; align-items: center; justify-content: center}
+
+/* Upstream TimeRow: centered over the pointer, following position over 200ms. */
+:root{
+  --duration-200:200ms;
+  --spacing-s:var(--numbers-12);
+  --motion-duration-follow:var(--duration-200);
+  --motion-easing-follow:ease-out;
+  --shift-overlay-gap:var(--spacing-s);
+  --shift-overlay-follow-duration:var(--motion-duration-follow);
+}
+.shift-overlay{
+  transform:translate(-50%,calc(-100% - var(--shift-overlay-gap)));
+  transition:left var(--shift-overlay-follow-duration) var(--motion-easing-follow),top var(--shift-overlay-follow-duration) var(--motion-easing-follow);
+}
+@media(prefers-reduced-motion:reduce){.shift-overlay{transition:none}}
