@@ -28,7 +28,7 @@ Compare appearance (layout, spacing, typography, and colors) and interactive beh
 
 Each implementation branch includes Vercel configuration. Live URLs will be added to the table after deployment is confirmed.
 
-The initial implementation files currently remain on main as well. Use the version branches for comparisons.
+The main branch contains only this README. Use the version branches for implementations and comparisons.
 
 ---
 
@@ -58,4 +58,4 @@ Figmaから画面を実装する際に、design.mdに記載する情報の詳し
 
 各実装ブランチにはVercel用の設定を含めています。公開URLはデプロイ確認後に上の表へ追記します。
 
-現時点では、mainにも初回実装のファイルが残っています。比較対象には各バージョンのブランチを使用してください。
+mainにはこのREADMEのみを置いています。実装の参照・比較には各バージョンのブランチを使用してください。
